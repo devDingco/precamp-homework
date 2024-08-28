@@ -8,5 +8,17 @@ function onInvite() {
         "****@" +
         emailInputValue.split("@")[1];
 
-    alert(`회원가입을 축하합니다. 가입하신 이메일은 ${maskEmail}입니다.`);
+    if (!emailInputValue.includes("@")) {
+        alert("제대로 된 이메일이 아닙니다. 이메일에 @가 없습니다.");
+    } else if (
+        emailInputValue.split("@")[1] != "gmail.com" &&
+        emailInputValue.split("@")[1] != "naver.com" &&
+        emailInputValue.split("@")[1] != "hanmail.net"
+    )
+        alert(
+            "이메일은 naver.com, gmail.com, hanmail.net 중에서만 가입 가능합니다."
+        );
+    else {
+        alert(`회원가입을 축하합니다.`);
+    }
 }
