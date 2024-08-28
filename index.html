@@ -174,146 +174,156 @@
                 </div>
               </div>
             </div>
-            <div class="CSS_회원가입영역">
-              <div class="CSS_회원가입_제목">
-                <div>코드캠프에 가입하고</div>
-                <div>개발자로 커리어 점프 하세요.</div>
-              </div>
-              <div class="CSS_회원가입_입력영역">
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">이름</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <input
-                    placeholder="이름을 입력해 주세요."
-                    class="CSS_사이드바_회원가입_인풋"
-                    id="이름입력창"
-                  />
+            <form id="user-signup-form">
+              <div class="CSS_회원가입영역">
+                <div class="CSS_회원가입_제목">
+                  <div>코드캠프에 가입하고</div>
+                  <div>개발자로 커리어 점프 하세요.</div>
                 </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">이메일</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <input
-                    id="이메일입력창"
-                    class="CSS_사이드바_회원가입_인풋"
-                    placeholder="네이버, 구글, 한메일, 카카오 계정만 입력"
-                  />
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">비밀번호</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <input
-                    id="비밀번호입력창"
-                    class="CSS_사이드바_회원가입_인풋"
-                    type="password"
-                    placeholder="비밀번호를 입력해 주세요."
-                  />
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">비밀번호 확인</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <input
-                    id="비밀번호확인입력창"
-                    class="CSS_사이드바_회원가입_인풋"
-                    type="password"
-                    placeholder="비밀번호를 한번 더 입력해 주세요."
-                  />
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">전화번호</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <input
-                    id="전화번호입력창"
-                    class="CSS_사이드바_회원가입_인풋"
-                    type="tel"
-                    placeholder="010으로 시작, '-'을 꼭 입력해 주세요."
-                  />
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_사이드바_회원가입_인증">
-                  <div class="CSS_사이드바_회원가입_인증번호요청구역">
-                    <div
-                      class="CSS_사이드바_회원가입_인증번호"
-                      id="인증번호보여주는곳"
-                    >
-                      000000
+                <div class="CSS_회원가입_입력영역">
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">이름</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <input
+                      placeholder="이름을 입력해 주세요."
+                      class="CSS_사이드바_회원가입_인풋"
+                      id="이름입력창"
+                      required
+                    />
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">이메일</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <input
+                      id="이메일입력창"
+                      class="CSS_사이드바_회원가입_인풋"
+                      placeholder="네이버, 구글, 한메일, 카카오 계정만 입력"
+                      required
+                    />
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">비밀번호</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <input
+                      id="비밀번호입력창"
+                      class="CSS_사이드바_회원가입_인풋"
+                      type="password"
+                      placeholder="비밀번호를 입력해 주세요."
+                      required
+                    />
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">비밀번호 확인</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <input
+                      id="비밀번호확인입력창"
+                      class="CSS_사이드바_회원가입_인풋"
+                      type="password"
+                      placeholder="비밀번호를 한번 더 입력해 주세요."
+                      oninput="change_pw_2_color()"
+                      required
+                    />
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">전화번호</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <input
+                      id="전화번호입력창"
+                      class="CSS_사이드바_회원가입_인풋"
+                      type="tel"
+                      placeholder="010으로 시작, '-'을 꼭 입력해 주세요."
+                      required
+                    />
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_사이드바_회원가입_인증">
+                    <div class="CSS_사이드바_회원가입_인증번호요청구역">
+                      <div
+                        class="CSS_사이드바_회원가입_인증번호"
+                        id="인증번호보여주는곳"
+                      >
+                        000000
+                      </div>
+                      <div>
+                        <button onclick="인증번호요청기능()">
+                          <img src="./assets/button_outline.png" />
+                        </button>
+                      </div>
                     </div>
-                    <div>
-                      <button onclick="인증번호요청기능()">
-                        <img src="./assets/button_outline.png" />
+                    <div class="CSS_사이드바_회원가입_인증번호남은시간">
+                      <div id="남은시간보여주는곳">0:0</div>
+                      <div class="CSS_사이드바_회원가입_인증번호여백"></div>
+                      <button>
+                        <img
+                          src="./assets/button_primary.png"
+                          id="회원가입_인증번호_결과버튼"
+                        />
                       </button>
                     </div>
                   </div>
-                  <div class="CSS_사이드바_회원가입_인증번호남은시간">
-                    <div id="남은시간보여주는곳">0:0</div>
-                    <div class="CSS_사이드바_회원가입_인증번호여백"></div>
-                    <button>
-                      <img
-                        src="./assets/button_primary.png"
-                        id="회원가입_인증번호_결과버튼"
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">자기소개</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <textarea
+                      class="CSS_사이드바_회원가입_자기소개"
+                      placeholder="자기소개를 입력해 주세요."
+                      id="자기소개입력창"
+                      required
+                    ></textarea>
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_항목_제목">성별</div>
+                    <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                    <div class="CSS_사이드바_왼쪽부분_라디오버튼부분">
+                      <div class="CSS_사이드바_왼쪽부분_라디오그룹">
+                        <input type="radio" class="genderinput" id="male" name="gender" checked/>
+                        <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                        <label for="male" class="CSS_사이드바_라디오그룹텍스트"
+                          >남성</label
+                        >
+                      </div>
+                      <div class="CSS_회원가입_라디오_간격"></div>
+                      <div class="CSS_사이드바_왼쪽부분_라디오그룹">
+                        <input type="radio" class="genderinput" id="female" name="gender" />
+                        <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
+                        <label for="female" class="CSS_사이드바_라디오그룹텍스트"
+                          >여성</label
+                        >
+                      </div>
+                    </div>
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <div class="CSS_회원가입_동의체크구역">
+                      <input
+                        id="agreement"
+                        type="checkbox"
+                        class="CSS_회원가입_동의체크박스 checkinput"
+                        onchange = "activate_signup()"
+                        required
                       />
+                      <label
+                        for="agreement"
+                        class="CSS_회원가입_동의체크박스_텍스트"
+                        >집에는 씻으러만 가는데 동의합니다.</label
+                      >
+                    </div>
+                  </div>
+                  <div class="CSS_사이드바_회원가입_높이간격"></div>
+                  <div class="CSS_회원가입_항목">
+                    <button id="user-register-button" form="user-signup-form" onclick="JS_회원가입()" disabled>
+                      <img id="register-img" src="./assets/register-button.png" />
                     </button>
                   </div>
                 </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">자기소개</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <textarea
-                    class="CSS_사이드바_회원가입_자기소개"
-                    placeholder="자기소개를 입력해 주세요."
-                    id="자기소개입력창"
-                  ></textarea>
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_항목_제목">성별</div>
-                  <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                  <div class="CSS_사이드바_왼쪽부분_라디오버튼부분">
-                    <div class="CSS_사이드바_왼쪽부분_라디오그룹">
-                      <input type="radio" id="male" name="gender" />
-                      <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                      <label for="male" class="CSS_사이드바_라디오그룹텍스트"
-                        >남성</label
-                      >
-                    </div>
-                    <div class="CSS_회원가입_라디오_간격"></div>
-                    <div class="CSS_사이드바_왼쪽부분_라디오그룹">
-                      <input type="radio" id="female" name="gender" />
-                      <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
-                      <label for="female" class="CSS_사이드바_라디오그룹텍스트"
-                        >여성</label
-                      >
-                    </div>
-                  </div>
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <div class="CSS_회원가입_동의체크구역">
-                    <input
-                      id="agreement"
-                      type="checkbox"
-                      class="CSS_회원가입_동의체크박스"
-                    />
-                    <label
-                      for="agreement"
-                      class="CSS_회원가입_동의체크박스_텍스트"
-                      >집에는 씻으러만 가는데 동의합니다.</label
-                    >
-                  </div>
-                </div>
-                <div class="CSS_사이드바_회원가입_높이간격"></div>
-                <div class="CSS_회원가입_항목">
-                  <button onclick="JS_회원가입()">
-                    <img src="./assets/가입버튼.png" />
-                  </button>
-                </div>
               </div>
-            </div>
-
+            </form>
             <div class="CSS_회원가입사진영역"></div>
           </div>
         </div>
