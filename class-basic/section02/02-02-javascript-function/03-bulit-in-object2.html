@@ -1,0 +1,18 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>Javascript Implict Object</title>
+        <script>
+            function randomNumber() {
+                const random = String(
+                    Math.round(Math.random() * 1000000)
+                ).padStart(6, "0");
+                console.log(random);
+                return random;
+            }
+        </script>
+    </head>
+    <body>
+        <button onclick="randomNumber()">인증번호 요청</button>
+    </body>
+</html>

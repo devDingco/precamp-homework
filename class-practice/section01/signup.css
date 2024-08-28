@@ -1,0 +1,79 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.container {
+    width: 670px;
+    height: 960px;
+    border: 1px solid #aacdff;
+    border-radius: 20px;
+
+    display: flex;
+    flex-direction: column;
+
+    padding: 72px 100px 70px 100px;
+
+    // box-shadow value
+    // x, y, blur, spread, color
+    box-shadow: 7px 7px 39px 0px #0068ff40;
+}
+.signUpInfor {
+    color: #0068ff;
+    font-size: 32px;
+    font-weight: 700;
+}
+.inputComponent {
+    color: #797979;
+    font-weight: 400;
+    font-size: 16px;
+    padding-top: 20px;
+}
+.inputStyle {
+    width: 466px;
+    font-size: 26px;
+    color: orange;
+
+    border: none;
+    border-bottom: 2px solid #cfcfcf;
+
+    outline: none;
+}
+.inputStyle:focus {
+    border-bottom: 2px solid #0068ff;
+}
+.genderContainer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100px;
+    gap: 12px;
+}
+.checkboxContainer {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-bottom: 30px;
+}
+button {
+    width: 472px;
+    height: 75px;
+    border: 1px solid #0068ff;
+    border-radius: 10px;
+
+    font-size: 18px;
+    font-weight: 400;
+    background-color: white;
+    margin-top: 30px;
+    color: #0068ff;
+}
+button:hover {
+    cursor: pointer;
+    background-color: #0068ff;
+    color: white;
+}

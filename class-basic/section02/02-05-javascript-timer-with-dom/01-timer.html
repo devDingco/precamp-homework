@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>builtInFunction</title>
+        <script>
+            function onPost() {
+                const random = String(
+                    Math.floor(Math.random() * 1000000)
+                ).padStart(6, "0");
+
+                document.getElementById("number").innerText = random;
+
+                let time = 180;
+
+                document.getElementById("timer").innerText = `03:00`;
+
+                setInterval(() => {
+                    time -= 1;
+                    const minute = Math.floor(time / 60);
+                    const second = time % 60 < 10 ? `0${time % 60}` : time % 60;
+                    document.getElementById(
+                        "timer"
+                    ).innerText = `0${minute}:${second}`;
+                }, 1000);
+
+                document.getElementById("button").disabled = true;
+                document.getElementById("button").style = "color: red";
+            }
+        </script>
+    </head>
+    <body>
+        <div id="number"></div>
+        <button id="button" onclick="onPost()">인증번호 요청하기</button>
+        <div id="timer"></div>
+    </body>
+</html>

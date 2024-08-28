@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>image 실습</title>
+        <style>
+            .강아지배경이미지 {
+                width: 250px;
+                height: 250px;
+                background-image: url("./00-dog.jpg"); /* 배경이미지 */
+                background-size: contain;
+                /* background-repeat: no-repeat; */
+            }
+        </style>
+    </head>
+    <body>
+        <!-- img는 img 기준으로 크기를 조절해줌 자식 추가 불가
+         하지만 div background img는 background를 기준으로 크기를 조절 자식 추가 가능 -->
+        <img src="./00-dog.jpg" alt="dog" width="250" />
+        <div class="강아지배경이미지">
+            <span>배경이미지 안에는 다른것들을 올릴 수 있음</span>
+            <button>버튼</button>
+        </div>
+    </body>
+</html>

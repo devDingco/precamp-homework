@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>나만의 회원가입 실습</title>
+        <link rel="stylesheet" href="./signup.css" />
+    </head>
+    <body>
+        <div class="container">
+            <div class="signUpInfor">
+                <p>회원 가입을 위해</p>
+                <p>정보를 입력해주세요</p>
+            </div>
+
+            <label for="email" class="inputComponent">* 이메일</label>
+            <input type="email" class="inputStyle" name="email" />
+
+            <label for="name" class="inputComponent">* 이름</label>
+            <input type="text" class="inputStyle" name="name" />
+
+            <label for="password" class="inputComponent">* 비밀번호</label>
+            <input type="password" class="inputStyle" name="password" />
+            <label for="passwordAgain" class="inputComponent"
+                >* 비밀번호 확인</label
+            >
+            <input type="password" class="inputStyle" name="passwordAgain" />
+
+            <div class="genderContainer">
+                <div>
+                    <input type="radio" name="gender" id="woman" />
+                    <label for="woman">여성</label>
+                </div>
+                <div>
+                    <input type="radio" name="gender" id="man" />
+                    <label for="man">남성</label>
+                </div>
+            </div>
+
+            <div class="checkboxContainer">
+                <input type="checkbox" id="checkbox" />
+                <label for="checkbox"
+                    >이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두
+                    동의합니다.</label
+                >
+            </div>
+
+            <hr />
+            <button>가입하기</button>
+        </div>
+    </body>
+</html>

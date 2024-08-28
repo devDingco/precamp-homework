@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>flexBox 실습</title>
+        <style>
+            .우리동네 {
+                width: 500px;
+                height: 500px;
+                display: flex;
+                background-color: aqua;
+                /* justify-content: center; 가로축 가운데 정렬 */
+                justify-content: space-between; /* 가로축 양옆으로 떨어트려서 정렬 */
+                /* align-items: cetner; 세로축 가운데 정렬 */
+                align-items: flex-end;
+            }
+            .철수네집 {
+                width: 150px;
+                height: 150px;
+                background-color: yellow;
+            }
+            .영희네집 {
+                width: 150px;
+                height: 150px;
+                background-color: pink;
+            }
+        </style>
+    </head>
+    <body>
+        <div class="우리동네">
+            <div class="철수네집">철수네집</div>
+            <div class="영희네집">영희네집</div>
+        </div>
+    </body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <title>variable data store practice</title>
+        <script>
+            // 변수
+            let myName = "철수";
+            myName = "영희";
+            console.log(myName);
+
+            const yourName = "철수";
+            console.log(yourName);
+
+            // number 계산
+            const myMoney = 1000;
+            const yourMoney = 5000;
+            const sum = myMoney + yourMoney;
+            console.log(sum);
+
+            // string 계산
+            const myMoney2 = "1000";
+            const yourMoney2 = "5000";
+            const sum2 = myMoney2 + yourMoney2;
+            console.log(sum2);
+
+            // string + number
+            const myMoney3 = "1000";
+            const yourMoney3 = 5000;
+            const sum3 = myMoney3 + yourMoney3;
+            console.log(sum3);
+
+            // object
+            const student1 = {
+                name: "철수",
+                age: 12,
+                school: "다람쥐 초등학교",
+            };
+            const student2 = {
+                name: "영희",
+                age: 11,
+                school: "토끼 초등학교",
+            };
+            const student3 = {
+                name: "맹구",
+                age: 13,
+                school: "공룡 초등학교",
+            };
+
+            console.log(student1.name);
+            console.log(student1.age);
+            console.log(student1.school);
+
+            // array
+            const candyBusket = ["포도맛 사탕", "딸기맛 사탕"];
+            const studentList = [student1, student2];
+
+            candyBusket.push("박하맛 사탕");
+            console.log(candyBusket);
+
+            studentList.push(student3);
+            console.log(studentList);
+
+            console.log(studentList.length);
+
+            console.log(studentList[0]);
+
+            const lastIndex = studentList.length - 1;
+            console.log(studentList[lastIndex]);
+
+            // object in array
+            console.log(studentList[0].age);
+        </script>
+    </head>
+    <body></body>
+</html>
