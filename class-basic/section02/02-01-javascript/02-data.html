@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>데이터 담기 실습</title>
+    <script>
+      //변수
+      let name = "hyeji";
+      name = "namjam";
+      console.log(name);
+
+      //const: 변하지 않는 변수 값
+      const frname = "we-mu-sun";
+      console.log(frname);
+
+      //변수의 계산
+      const 영희돈 = 1000;
+      const 철수돈 = 100;
+      const total = 영희돈 + 철수돈;
+      console.log(total);
+
+      //문자열의 계산
+      const 영희돈2 = "4000";
+      const 철수돈2 = "4000";
+      const total2 = 영희돈2 + 철수돈2;
+      console.log(total2);
+
+      const 영희돈3 = 4000;
+      const 철수돈3 = "4000";
+      const total3 = 영희돈3 + 철수돈3;
+      console.log(total3);
+
+      //객체에 저장하기
+      const 학생증1 = {
+        이름: "위무선",
+        나이: 24,
+        소속: "운몽",
+      };
+      const 학생증2 = {
+        이름: "남잠",
+        나이: 25,
+        소속: "운심부처",
+      };
+      const 학생증3 = {
+        이름: "섭회상",
+        나이: 23,
+        소속: "몰라",
+      };
+
+      console.log(학생증1.이름, 학생증1.나이, 학생증1.소속);
+
+      //배열에 저장하기
+      const 사탕바구니 = ["포도맛", "딸기맛"];
+      const 학생증목록 = [학생증1, 학생증2];
+      // 끝 부분에 목록을 추가하기
+      사탕바구니.push("박하맛");
+      console.log(사탕바구니);
+
+      학생증목록.push(학생증3);
+      console.log(학생증목록);
+
+      console.log(학생증목록.length);
+      console.log(학생증목록[0]);
+
+      const 마지막번호 = 학생증목록.length - 1;
+      console.log(학생증목록[마지막번호]);
+
+      //배열안의 객체에서 꺼내기
+      console.log(학생증목록[0].이름);
+    </script>
+  </head>
+  <body></body>
+</html>

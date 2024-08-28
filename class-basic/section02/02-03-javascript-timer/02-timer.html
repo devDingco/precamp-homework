@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>내장함수를 활용한 타이머 실습</title>
+    <script>
+      function 타이머() {
+        let 시간 = 180;
+
+        setInterval(function () {
+          const 분 = Math.floor(시간 / 60); //floor: 소수점 떨구기
+          const 초 = 시간 % 60;
+          //💡 초를 00으로 나타내려면, String().padStart()사용하기!
+          const r초 = String(초).padStart(2, "0");
+          console.log(`${분}:${r초}`);
+          시간 -= 1;
+        }, 1000);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="타이머()">타이머 시작🕐</button>
+  </body>
+</html>

@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>회원가입</title>
+    <link rel="stylesheet" href="./signup.css"/>
+    <link href="./signup.js" rel="script" />
+    <script>
+        function 가입하는버튼() {
+            const 이메일 = document.getElementById("이메일").value
+            const 쪼갠이메일 = 이메일.split("@")
+
+            const 이메일앞부분 = 쪼갠이메일[0]
+            const 이메일뒷부분 = 쪼갠이메일[1];
+
+            const newEmailF = 이메일앞부분.slice(0, -4); // 0부터 뒤에서4번째자리까지 alstj3758이면 a부터j까지
+            const newEmailStar = "****";
+            console.log(newEmailStar)
+            const newEmail = newEmailF + newEmailStar;
+            
+            const 새로운이메일 = newEmail + "@" + 이메일뒷부분;
+
+
+            alert(`회원가입을 축하합니다. 가입하신 이메일은 ${새로운이메일}입니다.`)
+}
+    </script>
+</head>
+<body>
+    <div class="종이">
+        <div class="제목">회원 가입을 위해</div>
+        <div class="제목">정보를 입력해주세요</div>
+
+        <div class="네임택 이메일" >* 이메일</div>
+        <input id="이메일" class="입력창"type="text"/>
+
+        <div class="네임택">* 이름</div>
+        <input class="입력창" type="text"/>
+
+        <div class="네임택">* 비밀번호</div>
+        <input class="입력창" type="password"/>
+
+        <div class="네임택">* 비밀번호 확인</div>
+        <input class="입력창" type="password"/>
+        
+        <div class="우리동네">
+            <input type="radio" class="라디오" name="성별그룹" id="여자선택"/><label  class="성별" for="여자선택">여성</label>
+            <input type="radio" class="라디오" name="성별그룹" id="남자선택"/><label for="남자선택">남성</label>
+        </div>
+
+        <div class="훈이동네">
+            <input type="checkbox" id="동의하기체크"/><label for="동의하기체크"> 이용약관 개인정보 수집 및 이용, 마케팅 활용 선택에 모두 동의합니다.</label>
+        </div>
+
+        <hr />
+        <button onclick="가입하는버튼()" class="가입하는버튼">가입하기</button>
+    </div>
+</body>
+</html>

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <title>내장 객체 실습</title>
+    <script>
+      // 1. 수학객체: Math.~~()
+      const 수학객체 = {
+        max: function () {
+          console.log("최댓값을 구합니다.");
+        },
+        random: function () {
+          return 5;
+        },
+        round: function (반올림할값) {
+          console.log("반올림할 대상: " + 반올림할값);
+        },
+      };
+      수학객체.max();
+      수학객체.round(1.8);
+
+      const random = Math.random();
+      console.log(random);
+      const 내가만든랜덤숫자 = 수학객체.random();
+      console.log(내가만든랜덤숫자); //function에서 return이 없다면 undefined가 나온다.
+
+      const roundNumber = Math.round(2.8);
+      console.log(roundNumber);
+
+      // 2. 날짜객체
+      const 나의날짜 = new Date();
+      console.log(나의날짜.getFullYear());
+      console.log(나의날짜.getMonth() + 1); //❗️ Month: 0~11월로 만들어져서 1을 더해야한다
+      console.log(나의날짜.getDay());
+      console.log(나의날짜.getDate());
+      console.log(
+        `${나의날짜.getFullYear()}년 ${
+          나의날짜.getMonth() + 1
+        }월 ${나의날짜.getDate()}일`
+      );
+    </script>
+  </head>
+  <body></body>
+</html>

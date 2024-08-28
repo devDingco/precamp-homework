@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>내장 객체 실습2</title>
+    <script>
+      function 인증번호요청기능() {
+        const 랜덤숫자 = Math.random();
+        console.log(랜덤숫자);
+
+        /*        
+        1. floor()에서 앞자리가 0이면 5자리로 나온다.
+        2. 이 문제를 해결: 문자열로 바꿔야한다. String(); 
+        3. padStart(몇자리수, 앞에 올 것): 앞자리를 어떻게 할거니?
+        */
+        const 소수점옮기기 = Math.floor(랜덤숫자 * 1000000); //소수점 옮기기
+        const 인증번호 = String(소수점옮기기).padStart(6, "0"); //6자리로 나타낼거고, 5자리면 앞을 0으로 넣어줘
+        console.log(인증번호);
+      }
+    </script>
+  </head>
+  <body>
+    <button onclick="인증번호요청기능()">인증번호 요청</button>
+  </body>
+</html>
