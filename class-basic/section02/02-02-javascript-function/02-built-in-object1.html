@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>builtInFunction</title>
+        <script>
+            // Math Object
+            const mathObject = {
+                max: function (number) {
+                    console.log("최대값을 구합니다.");
+                },
+                random: function (number) {
+                    // console.log("랜덤값을 구합니다.");
+                },
+                round: function (number) {
+                    console.log("반올림할 대상:", number);
+                },
+            };
+            mathObject.max();
+            const random = String(Math.random().toFixed(6) * 1000000).padStart(
+                6,
+                "0"
+            );
+            console.log(random);
+
+            // Date Object
+            const day = new Date();
+            console.log(day.getFullYear());
+            console.log(day.getMonth() + 1);
+            console.log(day.getDate());
+            console.log(
+                day.getFullYear() +
+                    "-" +
+                    String(day.getMonth() + 1).padStart(2, 0) +
+                    "-" +
+                    day.getDate()
+            );
+        </script>
+    </head>
+    <body>
+        <button onclick="onClickSnack(1000)">1000원 넣기</button>
+        <button onclick="onClickSnack(5000)">5000원 넣기</button>
+        <button onclick="onClickSnack(10000)">10000원 넣기</button>
+    </body>
+</html>

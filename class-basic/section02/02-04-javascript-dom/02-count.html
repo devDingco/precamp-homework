@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>count</title>
+        <script>
+            function onPlus() {
+                const number =
+                    Number(document.getElementById("state").innerText) + 1;
+                document.getElementById("state").innerText = number;
+            }
+            function onMinus() {
+                const number =
+                    Number(document.getElementById("state").innerText) - 1;
+                document.getElementById("state").innerText = number;
+            }
+        </script>
+    </head>
+    <body>
+        <div id="state">0</div>
+        <button onclick="onPlus()">+</button>
+        <button onclick="onMinus()">-</button>
+    </body>
+</html>

@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>document</title>
+        <script>
+            function onSignUp() {
+                const userName = document.getElementById("name_input").value;
+                // document.getElementById("result").innerText = userName;
+                document.getElementById(
+                    "result"
+                ).innerHTML = `<button onclick="onView('${userName}')">${userName}</button>`;
+            }
+            function onView(userName) {
+                alert(`"${userName}"님 반갑습니다.`);
+            }
+        </script>
+    </head>
+    <body>
+        <div id="result"></div>
+        <label for="input">이름을 입력하세요 :</label>
+        <input type="text" name="input" id="name_input" />
+        <button onclick="onSignUp()">회원가입</button>
+    </body>
+</html>

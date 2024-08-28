@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>input vaildation</title>
+        <script>
+            function onInputCheck() {
+                const emailElement = document.getElementById("email").value;
+                const womanElement = document.getElementById("woman").checked;
+                const manElement = document.getElementById("man").checked;
+                const agreeElement = document.getElementById("agree").checked;
+
+                const buttonElement = document.getElementById("button");
+
+                if (
+                    emailElement &&
+                    (womanElement || manElement) &&
+                    agreeElement
+                ) {
+                    buttonElement.disabled = false;
+                    buttonElement.style.backgroundColor = "yellow";
+                } else {
+                    buttonElement.disabled = true;
+                    buttonElement.style.backgroundColor = "none";
+                }
+            }
+        </script>
+    </head>
+    <body>
+        이메일 : <input id="email" type="text" oninput="onInputCheck()" />
+        <br />
+        <input id="woman" type="radio" name="gender" oninput="onInputCheck()" />
+        여성
+        <br />
+        <input id="man" type="radio" name="gender" oninput="onInputCheck()" />
+        남성<br />
+        <input id="agree" type="checkbox" oninput="onInputCheck()" />
+        동의합니까? <br />
+        <button id="button" disabled>회원가입</button>
+    </body>
+</html>

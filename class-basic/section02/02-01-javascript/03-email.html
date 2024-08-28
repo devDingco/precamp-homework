@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>email</title>
+        <script>
+            let emailInputValue = "codecamp@gmail.com";
+            if (emailInputValue.includes("@")) {
+                const userEmail = emailInputValue.split("@")[0];
+                const gmail = emailInputValue.split("@")[1];
+
+                const maskingEmail = userEmail.slice(0, 4) + "****@" + gmail;
+                console.log(maskingEmail);
+            }
+        </script>
+    </head>
+    <body></body>
+</html>

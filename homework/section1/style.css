@@ -1,0 +1,419 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    width: 100dvw;
+    height: 100dvh;
+    background-color: rgba(73, 20, 73, 1);
+}
+header {
+    width: 100%;
+    height: 5%;
+    display: flex;
+    align-items: center;
+}
+.header-first {
+    width: 25dvw;
+    height: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 16px;
+    padding-right: 16px;
+}
+.header-second {
+    width: 37.5dvw;
+    position: relative;
+}
+.header-input {
+    background-color: rgba(149, 92, 152, 1);
+    border: 0px;
+    border-radius: 8px;
+    width: 100%;
+    height: 4dvh;
+    padding-left: 40px;
+    outline: none;
+    color: rgba(239, 230, 239, 1);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+}
+.header-input::placeholder {
+    color: rgba(239, 230, 239, 1);
+    font-weight: 400;
+    font-size: 20px;
+    line-height: 32px;
+    position: absolute;
+    top: 6px;
+}
+.search-img {
+    position: absolute;
+    left: 8px;
+    top: 6px;
+}
+.header-third {
+    width: 32.5dvw;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 20px;
+}
+.header-third-container {
+    border: 1px solid rgba(113, 53, 116, 1);
+    border-radius: 8px;
+    display: flex;
+    align-items: center;
+    color: white;
+    padding-left: 4px;
+    padding-right: 8px;
+    gap: 4px;
+}
+.header-third-font {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+main {
+    height: 90%;
+    display: flex;
+}
+aside {
+    width: 5dvw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+}
+.aside-first {
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+}
+.aside-list {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    font-weight: 600;
+    font-size: 16px;
+    line-height: 20px;
+    color: rgba(228, 228, 228, 1);
+}
+.aside-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+.aside-second {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.aside-second-profile {
+    width: 40px;
+    height: 40px;
+    background-color: rgba(177, 75, 182, 1);
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+section {
+    width: 20dvw;
+    height: 100%;
+    background-color: rgba(113, 53, 116, 1);
+    border-radius: 8px 0px 0px 8px;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+    color: rgba(255, 255, 255, 1);
+}
+.section-first {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 20px;
+    border-bottom: 1px solid rgba(149, 92, 152, 1);
+    padding-bottom: 24px;
+    margin-bottom: 24px;
+}
+.section-first-container {
+    display: flex;
+    justify-content: space-between;
+}
+.section-first-img {
+    display: flex;
+    gap: 8px;
+}
+.section-first-white {
+    width: 100%;
+    border-radius: 8px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    gap: 8px;
+    background-color: rgba(255, 255, 255, 1);
+}
+.section-first-font {
+    color: rgba(73, 20, 73, 1);
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+.section-second {
+    width: 100%;
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+}
+.section-second-first {
+    display: flex;
+    justify-content: space-between;
+}
+.section-second-first-container {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+}
+.section-second-first-container-1 {
+    display: flex;
+    justify-content: center;
+    gap: 6px;
+}
+.svg-error {
+    margin-top: 2px;
+}
+.font-3 {
+    font-weight: 600;
+    font-size: 20px;
+    line-height: 24px;
+}
+
+.font-4 {
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 24px;
+}
+.section-second-first-state {
+    border-radius: 8px;
+    padding: 4px 12px 4px 12px;
+    gap: 4px;
+    background-color: rgba(255, 255, 255, 0.2);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+.section-no-invite {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 8px;
+}
+.section-invite-text {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+    gap: 4px;
+    align-items: center;
+}
+.font-5 {
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
+    color: rgba(201, 170, 201, 1);
+}
+.section-invite-button {
+    display: flex;
+    border-radius: 8px;
+    padding: 8px 12px 8px 12px;
+    gap: 8px;
+    background-color: rgba(73, 20, 73, 1);
+}
+.error1 {
+    margin-top: 1px;
+}
+.section-channel {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+.section-channel1 {
+    display: flex;
+    gap: 8px;
+}
+.font-6 {
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+    color: rgba(212, 211, 211, 1);
+}
+.section-second-fourth {
+    display: flex;
+    gap: 8px;
+}
+article {
+    position: relative;
+    width: 70dvw;
+    height: 100%;
+    background-color: rgba(213, 188, 228, 1);
+    display: flex;
+}
+.form {
+    width: 35dvw;
+    padding: 40px 60px 40px 60px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+.mask {
+    width: 35dvw;
+    height: 90dvh;
+}
+.font-8 {
+    font-weight: 800;
+    font-size: 40px;
+    line-height: 56px;
+    color: rgba(73, 20, 73, 1);
+}
+.font8-container {
+    width: 100%;
+    padding: 8px;
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+}
+.input-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    padding-left: 20px;
+    padding-right: 20px;
+}
+.input-style {
+    width: 27dvw;
+    display: flex;
+    justify-content: space-between;
+}
+.lable-style {
+    color: rgba(51, 51, 51, 1);
+    font-weight: 500;
+    font-size: 20px;
+    line-height: 24px;
+    padding-top: 4px;
+}
+.input123,
+.input23 {
+    width: 320px;
+    header: 44px;
+    background-color: rgba(255, 255, 255, 1);
+    border: 1px solid rgba(199, 199, 199, 1);
+    border-radius: 8px;
+    padding: 8px 12px 8px 12px;
+    outline: none;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+    display: flex;
+}
+.input123::placeholder {
+    color: rgba(171, 171, 171, 1);
+    top: 16px;
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 24px;
+}
+
+.input-height {
+    height: 80px;
+}
+.input-gap {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+}
+.sign-first {
+    width: 100%;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    gap: 12px;
+}
+.sign-number {
+    color: rgba(149, 92, 152, 1);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+.timer {
+    color: rgba(232, 79, 79, 1);
+    font-weight: 500;
+    font-size: 18px;
+    line-height: 24px;
+}
+.sign-sucess {
+    border: 1px solid rgba(73, 20, 73, 1);
+    color: rgba(73, 20, 73, 1);
+    background-color: white;
+    border-radius: 8px;
+    padding: 8px 12px 8px 12px;
+}
+.sign-button {
+    color: white;
+    background-color: rgba(73, 20, 73, 1);
+    border-radius: 8px;
+    padding: 8px 12px 8px 12px;
+}
+.radio-style {
+    width: 70%;
+    height: 40px;
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+.invite-button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 48px;
+    border-radius: 8px;
+    background-color: rgba(73, 20, 73, 1);
+    color: white;
+    padding-top: 12px;
+    padding-bottom: 12px;
+}
+.checkbox-style {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.student {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    gap: 24px;
+    padding-left: 16px;
+    padding-right: 16px;
+}
+.img-student {
+    width: 40px;
+    height: 40px;
+}

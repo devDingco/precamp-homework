@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="ko">
+    <head>
+        <title>timer</title>
+        <script>
+            let time = 180;
+            let minute = time / 60;
+            let second = time % 60;
+            // 시간 반복 함수
+            setInterval(() => {
+                time -= 1;
+                minute = Math.floor(time / 60);
+                second = time % 60;
+                console.log(minute, second);
+            }, 1000);
+        </script>
+    </head>
+    <body></body>
+</html>
