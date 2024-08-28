@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>조건문 연습</title>
+  <script>
+    if (1+1 === 2) {
+      console.log('안녕, 바니즈');
+    }
+
+    let 철수나이 = 6
+    if (철수나이 >= 20) {
+      console.log('성인입니다.');
+    } else if (철수나이 >= 8) {
+      console.log('학생입니다.');
+    } else {
+      console.log('어린이입니다.')
+    }
+
+    const 프로필 = {
+      이름: '철수',
+      나이: 12,
+      학교: '다람쥐초등학교',
+    }
+    if (프로필.나이 >= 20) {
+      console.log(`${프로필.이름}은 성인입니다.`)
+    } else if (프로필.나이 >= 8) {
+      console.log(`${프로필.이름}은 학생입니다.`);
+    } else {
+      console.log(`${프로필.이름}은 어린이입니다.`)
+    }
+
+    const 과학점수 = 50
+    const 점수결과표 = 과학점수 >= 90 ? '과학 영재' : '과학 통과'
+    console.log(점수결과표)
+
+    if (true) {
+      console.log('무조건 실행')
+    }
+
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

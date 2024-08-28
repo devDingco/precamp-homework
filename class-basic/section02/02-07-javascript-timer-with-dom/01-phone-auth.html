@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>Document</title>
+    <script>
+        function 인증번호요청기능() {
+                const 인증번호 = String(Math.floor(Math.random() * 1000000)).padStart(6, '0')
+                document.getElementById('인증번호보여주는곳').innerText = 인증번호
+
+                let 남은시간 = 179
+                setInterval(() => {
+                    if (남은시간 < 0) {
+                        return
+                    }
+                    const 분 = Math.floor(남은시간 / 60)
+                    const 초 = 남은시간 % 60
+                    document.getElementById('남은시간보여주는곳').innerText = `${분}:${초}`
+                    남은시간 = 남은시간 - 1
+                }, 1000)
+                document.getElementById('버튼').disabled = true
+                document.getElementById('버튼').style = 'color: gray'
+            }
+    </script>
+</head>
+<body>
+    <div id="인증번호보여주는곳"></div>
+    <button id="버튼" onclick="인증번호요청기능()">인증번호 요청하기</button>
+    <div id="남은시간보여주는곳"></div>
+</body>
+</html>

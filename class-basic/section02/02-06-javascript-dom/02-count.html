@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>카운트 실습</title>
+    <script>
+        function plus() {
+            let cnt = document.getElementById('count').innerHTML
+            document.getElementById('count').innerHTML = Number(cnt) + 1
+        }
+
+        function minus() {
+            let cnt = document.getElementById('count').innerHTML
+            document.getElementById('count').innerHTML = Number(cnt) - 1
+        }
+    </script>
+</head>
+<body>
+    <div id="count">0</div>
+    <button onclick="plus()"> + </button>
+    <button onclick="minus()"> - </button>
+</body>
+</html>
