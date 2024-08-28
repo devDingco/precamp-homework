@@ -345,17 +345,44 @@ button {
   line-height: 24px;
 }
 
+.CSS_회원가입_입력_컨테이너 {
+  display: flex;
+  flex-direction: column;
+  width: 320px;
+}
+
+.CSS_유효성_메시지 {
+  font-size: 12px;
+  margin-top: 4px;
+  min-height: 16px; /* 메시지가 없을 때도 공간 유지 */
+}
+
 .가입하기후_수강생프로필추가 {
   display: flex;
   align-items: center;
-  width: 328px;
-  height: 100%;
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 8px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.가입하기후_수강생프로필추가 img {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  margin-right: 12px;
 }
 
 .가입하기후_수강생프로필추가 span {
-  padding-left: 8px;
   color: #ffffff;
-  font-size: 20px;
+  font-size: 16px;
   font-weight: 500;
-  line-height: 24px;
+}
+
+#수강생추가 {
+  display: flex;
+  flex-direction: column;
+  align-items: stretch;
 }
