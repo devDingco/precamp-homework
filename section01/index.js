@@ -1,6 +1,7 @@
-// 전역 변수로 타이머 선언. clearInterval() 함수에서 사용됨
-let 타이머;
+let 타이머; // 전역 변수로 타이머 선언. clearInterval() 함수에서 사용됨
+let 수강생카운트 = 0; // 추가된 수강생 수
 
+// 알림창 표시 함수
 function 알림창() {
   // 필수 입력 필드 목록 정의
   const 필수필드 = ["이름", "이메일", "비밀번호", "전화번호"];
@@ -8,19 +9,16 @@ function 알림창() {
 
   // 각 필수 필드를 순회하며 입력 여부 확인
   for (const 필드 of 필수필드) {
-    // 해당 필드가 비어있으면 누락된필드 배열에 추가
     if (!document.getElementById(필드).value.trim()) {
       누락된필드.push(필드);
     }
   }
 
   // 누락된 필드가 있을 경우 알림 표시
-  /*
   if (누락된필드.length > 0) {
     alert(`다음 필드를 반드시 입력해야 합니다: ${누락된필드.join(", ")}`);
     return; // 함수 실행 중단
   }
-  */
 
   // 각 입력 필드에서 값을 가져오고, 비어있을 경우 빈 문자열로 설정
   const 이름 = document.getElementById("이름").value.trim() || "";
@@ -36,7 +34,7 @@ function 알림창() {
   // 동의 체크박스 처리. 체크 여부와 관계없이 항상 "Y"로 설정
   const agreement = document.getElementById("agreement").checked ? "Y" : "Y";
 
-  // 비밀번호를 별표로 가리기. 비밀번호가 있으면 길이만큼 별표로, 없으면 빈 문자열
+  // 비밀번호를 별표로 가리기
   const 가린비밀번호 = 비밀번호 ? "*".repeat(비밀번호.length) : "";
 
   // 전화번호 가운데 부분을 별표로 가리기
@@ -56,21 +54,24 @@ function 알림창() {
 
   // 알림창에 표시할 메시지 구성
   const 메시지 = `
-        이름 : ${이름}
-        이메일 : ${이메일}
-        비밀번호 : ${가린비밀번호}
-        성별 : ${성별}
-        전화번호 : ${가린전화번호}
-        동의여부 : ${agreement}
-        자기소개 : ${자기소개}
-        (가입일시 : ${가입일시})
-      `;
+    이름 : ${이름}
+    이메일 : ${이메일}
+    비밀번호 : ${가린비밀번호}
+    성별 : ${성별}
+    전화번호 : ${가린전화번호}
+    동의여부 : ${agreement}
+    자기소개 : ${자기소개}
+    (가입일시 : ${가입일시})
+  `;
 
   // 알림창으로 메시지 표시
   alert(메시지);
+
+  // 수강생 추가 실행
+  수강생추가();
 }
 
-//수강생 프로필 누르면 환영합니다 알림창 뜨기
+// 수강생 프로필 누르면 환영합니다 알림창 뜨기
 function 수강생축하() {
   // 현재 날짜를 가입일시로 설정
   const 날짜 = new Date();
@@ -88,27 +89,32 @@ function 수강생축하() {
   alert(메시지);
 }
 
-// 수강생 프로필 추가 및 가입하기 버튼 숨김 함수
+// 수강생 프로필 추가 함수
 function 수강생추가() {
-  // 수강생 프로필 HTML을 생성하여 화면에 추가
-  document.getElementById("수강생추가").innerHTML = `
-      <button class="가입하기후_수강생프로필추가" onclick="수강생축하()">
-        <img src="./assets/프로필 이미지 (export 하세요).png" alt="수강생 프로필">
-        <span class="추가된수강생이름">수강생 1</span>
-      </button>
-    `;
+  // 수강생 카운트 증가
+  수강생카운트++;
 
-  // 가입하기 버튼 요소를 찾아 숨김 처리
-  const 가입하기버튼 = document.querySelector(
-    ".CSS_사이드바_왼쪽부분_가입하기버튼"
-  );
-  if (가입하기버튼) {
-    // display 속성을 none으로 설정하여 버튼 숨김
+  // 수강생 프로필 HTML을 생성
+  const 수강생프로필 = document.createElement("button");
+  수강생프로필.className = "가입하기후_수강생프로필추가";
+  수강생프로필.onclick = 수강생축하;
+  수강생프로필.innerHTML = `
+    <img src="./assets/프로필 이미지 (export 하세요).png" alt="수강생 프로필">
+    <span class="추가된수강생이름">수강생 ${수강생카운트}</span>
+  `;
+
+  const 가입안내 = document.getElementById("가입안내");
+  const 수강생목록 = document.getElementById("수강생목록");
+  const 가입하기버튼 = document.getElementById("가입하기버튼");
+
+  // 첫 번째 수강생이 추가될 때 안내 메시지와 가입 버튼 숨기기
+  if (수강생카운트 === 1) {
+    가입안내.style.display = "none";
     가입하기버튼.style.display = "none";
-
-    // 아래는 버튼을 완전히 제거하는 방법
-    // 가입하기버튼.remove();
   }
+
+  // 수강생 프로필을 화면에 추가
+  수강생목록.appendChild(수강생프로필);
 }
 
 // 6자리 인증번호 생성 및 표시 함수
@@ -134,7 +140,7 @@ function 인증타이머() {
   document.getElementById("인증타이머").style.color = "red";
   document.getElementById("인증타이머").innerText = "03:00";
 
-  let 시간 = 180; // 3분 - 1초 (첫 실행에서 1초 감소되므로),,,,
+  let 시간 = 180; // 3분
 
   타이머 = setInterval(() => {
     if (시간 <= 0) {
@@ -182,37 +188,119 @@ function 인증완료버튼() {
   }
 }
 
+// 입력 필드 변경 시 유효성 검사 및 버튼 활성화 함수
 function 인풋필드추가() {
-  const 이름 = document.getElementById("이름").value !== "";
-  const 이메일 = document.getElementById("이메일").value !== "";
-  const 비밀번호 = document.getElementById("비밀번호").value !== "";
-  const 비밀번호확인 = document.getElementById("비밀번호확인").value !== "";
-  const 전화번호 = document.getElementById("전화번호").value !== "";
-  const 자기소개 = document.getElementById("자기소개").value !== "";
+  const 이름 = document.getElementById("이름").value.trim() !== "";
+  const 이메일 = document.getElementById("이메일").value.trim() !== "";
+  const 비밀번호 = document.getElementById("비밀번호").value;
+  const 비밀번호확인 = document.getElementById("비밀번호확인").value;
+  const 전화번호 = document.getElementById("전화번호").value.trim();
+  const 자기소개 = document.getElementById("자기소개").value.trim() !== "";
   const 남성 = document.getElementById("male").checked;
   const 여성 = document.getElementById("female").checked;
-  const agreement = document.getElementById("agreement").checked === true;
+  const agreement = document.getElementById("agreement").checked;
 
-  const 성별 = 남성 === true || 여성 === true;
+  const 성별 = 남성 || 여성;
+
+  // 비밀번호와 전화번호 유효성 검사
+  const 비밀번호유효 = /^(?=.*[a-z])(?=.*[!@#$%^&*])(?=.{8,})/.test(비밀번호);
+  const 전화번호유효 = /^010-\d{3,4}-\d{4}$/.test(전화번호);
 
   if (
-    이름 === true &&
-    이메일 === true &&
-    비밀번호 === true &&
-    비밀번호확인 === true &&
-    전화번호 === true &&
-    자기소개 === true &&
-    성별 === true &&
-    agreement === true
+    이름 &&
+    이메일 &&
+    비밀번호유효 &&
+    비밀번호 === 비밀번호확인 &&
+    전화번호유효 &&
+    자기소개 &&
+    성별 &&
+    agreement
   ) {
-    //모두 다 채웠을 때
-    document.getElementById(
-      "활성화된가입버튼"
-    ).innerHTML = `<button id="활성화된가입버튼" onclick="알림창(),수강생추가()"><img src="./assets/가입하기.png" id="활성화된가입버튼"/></button>`;
+    // 모두 다 채웠을 때
+    document.getElementById("활성화된가입버튼").innerHTML = `
+      <button onclick="가입처리()">
+        <img src="./assets/가입하기.png" id="활성화된가입버튼"/>
+      </button>
+    `;
   } else {
-    //모두 다 채우지 못 했을 때
-    document.getElementById(
-      "활성화된가입버튼"
-    ).innerHTML = `<button id="활성화된가입버튼" onclick="알림창(),수강생추가()"><img src="./assets/가입버튼.png" id="활성화된가입버튼"/></button>`;
+    // 모두 다 채우지 못 했을 때
+    document.getElementById("활성화된가입버튼").innerHTML = `
+      <button onclick="가입처리()">
+        <img src="./assets/가입버튼.png" id="활성화된가입버튼"/>
+      </button>
+    `;
+  }
+
+  // 비밀번호 유효성 메시지 표시
+  const 비밀번호메시지 = document.getElementById("비밀번호메시지");
+  if (비밀번호메시지) {
+    if (비밀번호 === "") {
+      비밀번호메시지.textContent = "";
+    } else if (!비밀번호유효) {
+      비밀번호메시지.textContent =
+        "비밀번호는 8자 이상, 영문 소문자, 특수문자를 포함해야 합니다.";
+      비밀번호메시지.style.color = "red";
+    } else {
+      비밀번호메시지.textContent = "유효한 비밀번호입니다.";
+      비밀번호메시지.style.color = "green";
+    }
+  }
+
+  // 전화번호 유효성 메시지 표시
+  const 전화번호메시지 = document.getElementById("전화번호메시지");
+  if (전화번호메시지) {
+    if (전화번호 === "") {
+      전화번호메시지.textContent = "";
+    } else if (!전화번호유효) {
+      전화번호메시지.textContent =
+        "전화번호는 010-0000-0000 형식이어야 합니다.";
+      전화번호메시지.style.color = "red";
+    } else {
+      전화번호메시지.textContent = "유효한 전화번호입니다.";
+      전화번호메시지.style.color = "green";
+    }
   }
 }
+
+// 비밀번호 일치 여부 확인 함수
+function 유효성검사() {
+  const 비밀번호 = document.getElementById("비밀번호").value;
+  const 비밀번호확인 = document.getElementById("비밀번호확인").value;
+  const 비밀번호확인메시지 = document.getElementById("비밀번호확인메시지");
+
+  if (비밀번호확인메시지) {
+    if (비밀번호확인 === "") {
+      비밀번호확인메시지.textContent = "";
+    } else if (비밀번호 === 비밀번호확인) {
+      비밀번호확인메시지.textContent = "비밀번호가 일치합니다.";
+      비밀번호확인메시지.style.color = "green";
+    } else {
+      비밀번호확인메시지.textContent = "비밀번호가 일치하지 않습니다.";
+      비밀번호확인메시지.style.color = "red";
+    }
+  }
+
+  인풋필드추가(); // 비밀번호 확인 후 전체 유효성 검사 실행
+}
+
+// 페이지 로드 시 이벤트 리스너 설정
+window.onload = function () {
+  // 비밀번호 입력 필드에 이벤트 리스너 추가
+  document.getElementById("비밀번호").addEventListener("input", 인풋필드추가);
+
+  // 비밀번호 확인 입력 필드에 이벤트 리스너 추가
+  document.getElementById("비밀번호확인").addEventListener("input", 유효성검사);
+
+  // 전화번호 입력 필드에 이벤트 리스너 추가
+  document.getElementById("전화번호").addEventListener("input", 인풋필드추가);
+
+  // 다른 필드들에도 이벤트 리스너 추가
+  ["이름", "이메일", "자기소개"].forEach((id) => {
+    document.getElementById(id).addEventListener("input", 인풋필드추가);
+  });
+
+  // 라디오 버튼과 체크박스에 이벤트 리스너 추가
+  ["male", "female", "agreement"].forEach((id) => {
+    document.getElementById(id).addEventListener("change", 인풋필드추가);
+  });
+};
