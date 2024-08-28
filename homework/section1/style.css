@@ -217,10 +217,12 @@ section {
 }
 .section-no-invite {
     width: 100%;
+    height: 120px;
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 8px;
+    overflow: scroll;
 }
 .section-invite-text {
     width: 100%;
@@ -287,8 +289,8 @@ article {
 }
 .font-8 {
     font-weight: 800;
-    font-size: 40px;
-    line-height: 56px;
+    font-size: 32px;
+    line-height: 40px;
     color: rgba(73, 20, 73, 1);
 }
 .font8-container {
@@ -296,7 +298,6 @@ article {
     padding: 8px;
     display: flex;
     flex-direction: column;
-
     align-items: center;
 }
 .input-list {
@@ -304,12 +305,16 @@ article {
     flex-direction: column;
     gap: 20px;
     padding-left: 20px;
-    padding-right: 20px;
+    margin-bottom: 12px;
+}
+.error3 {
+    align-items: flex-end;
 }
 .input-style {
     width: 27dvw;
     display: flex;
     justify-content: space-between;
+    position: relative;
 }
 .lable-style {
     color: rgba(51, 51, 51, 1);
@@ -339,6 +344,12 @@ article {
     font-size: 18px;
     line-height: 24px;
 }
+.pw {
+    position: absolute;
+    top: 14px;
+    right: 8px;
+    font-size: 12px;
+}
 
 .input-height {
     height: 80px;
@@ -346,7 +357,6 @@ article {
 .input-gap {
     display: flex;
     flex-direction: column;
-    gap: 12px;
 }
 .sign-first {
     width: 100%;
@@ -354,6 +364,10 @@ article {
     justify-content: flex-end;
     align-items: center;
     gap: 12px;
+    padding-right: 24px;
+}
+.mg-b {
+    margin-bottom: 12px;
 }
 .sign-number {
     color: rgba(149, 92, 152, 1);
@@ -394,9 +408,10 @@ article {
     width: 100%;
     height: 48px;
     border-radius: 8px;
-    background-color: rgba(73, 20, 73, 1);
+    background-color: rgba(199, 199, 199, 1);
     color: white;
     padding-top: 12px;
+    border: none;
     padding-bottom: 12px;
 }
 .checkbox-style {
@@ -416,4 +431,10 @@ article {
 .img-student {
     width: 40px;
     height: 40px;
+}
+.email-error {
+    color: rgba(232, 79, 79, 1);
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 20px;
 }

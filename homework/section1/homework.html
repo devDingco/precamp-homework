@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="ko">
     <head>
         <title>Homework</title>
         <link
@@ -7,6 +7,7 @@
             href="./style.css
         "
         />
+        <meta charset="UTF-8" />
     </head>
     <body>
         <header>
@@ -53,6 +54,7 @@
                     type="text"
                     class="header-input"
                     placeholder="수강생을 검색해보세요."
+                    oninput="onAbleButton()"
                 />
                 <svg
                     width="24"
@@ -500,6 +502,8 @@
                                     id="name"
                                     class="input123"
                                     placeholder="이름을 입력해주세요."
+                                    oninput="onAbleButton(); isKorean()"
+                                    onkeydown="handleKeyDown(event)"
                                 />
                             </div>
                         </div>
@@ -514,9 +518,12 @@
                                     id="email"
                                     class="input123"
                                     placeholder="네이버, 구글, 한메일, 카카오 계정만 입력"
+                                    oninput="onAbleButton()"
+                                    onblur="isEmailVaild()"
                                 />
                             </div>
                         </div>
+
                         <div class="input-list">
                             <div class="input-style">
                                 <label for="password" class="lable-style"
@@ -528,7 +535,12 @@
                                     id="password"
                                     class="input123"
                                     placeholder="비밀번호를 입력해 주세요."
+                                    oninput="onAbleButton()"
+                                    onblur="onPasswordVaild()"
                                 />
+                                <div class="pw" onclick="changePwType()">
+                                    비밀번호 표시
+                                </div>
                             </div>
                         </div>
                         <div class="input-list">
@@ -541,8 +553,13 @@
                                     name="passwordCheck"
                                     id="passwordCheck"
                                     class="input123"
-                                    placeholder="이름을 입력해주세요."
+                                    placeholder="비밀번호를 다시 입력해주세요."
+                                    oninput="onAbleButton()"
+                                    onblur="onPasswordVaild()"
                                 />
+                                <div class="pw" onclick="changePwCheckType()">
+                                    비밀번호 표시
+                                </div>
                             </div>
                         </div>
                         <div class="input-list">
@@ -556,11 +573,14 @@
                                     id="phone"
                                     class="input123"
                                     placeholder="010으로 시작, '-'를 꼭 입력해 주세요."
+                                    value="010-"
+                                    oninput="onAbleButton(); onDashPlus(event)"
+                                    onkeydown="defaultState(event)"
                                 />
                             </div>
                         </div>
 
-                        <div class="sign-first">
+                        <div class="sign-first mg-b">
                             <div id="sign-number" class="sign-number"></div>
                             <div
                                 id="auth-number"
@@ -575,7 +595,7 @@
                             <div
                                 id="sign-button"
                                 class="sign-button"
-                                onclick="onClickButton()"
+                                onclick="onClickButton(); onAbleButton()"
                             >
                                 인증 하기
                             </div>
@@ -592,6 +612,7 @@
                                 id="introduce"
                                 class="input23 input-height"
                                 placeholder="자기소개를 입력해주세요."
+                                oninput="onAbleButton()"
                             />
                         </div>
                     </div>
@@ -604,6 +625,7 @@
                                         type="radio"
                                         name="gender"
                                         id="man"
+                                        oninput="onAbleButton()"
                                     />
                                     <label for="man">남성</label>
                                 </div>
@@ -612,6 +634,7 @@
                                         type="radio"
                                         name="gender"
                                         id="woman"
+                                        oninput="onAbleButton()"
                                     />
                                     <label for="woman">여성</label>
                                 </div>
@@ -619,15 +642,32 @@
                         </div>
                     </div>
                     <div class="checkbox-style">
-                        <input type="checkbox" name="" id="checkbox" />
+                        <input
+                            type="checkbox"
+                            name=""
+                            id="checkbox"
+                            oninput="onAbleButton()"
+                        />
                         <div class="">집에는 씻으러만 가는데 동의합니다.</div>
                     </div>
-                    <div class="invite-button" onclick="onInvite()">가입</div>
+                    <button
+                        id="invite-button"
+                        class="invite-button"
+                        onclick="onInvite()"
+                        disabled
+                    >
+                        가입
+                    </button>
                 </div>
                 <img src="./img/mask.png" alt="mask" class="mask" />
             </article>
         </main>
     </body>
-    <script src="./invite.js"></script>
-    <script src="./auth.js"></script>
+    <script type="module" src="./utils/invite.js"></script>
+    <script src="./utils/auth.js"></script>
+    <script src="./utils/ableButton.js"></script>
+    <script src="./utils/isKorean.js"></script>
+    <script src="./utils/isEmailVaild.js"></script>
+    <script src="./utils/passwordVaild.js"></script>
+    <script src="./utils/defaultState.js"></script>
 </html>
