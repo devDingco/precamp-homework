@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>for문 실습하기</title>
+  <script>
+    // for (let index = 0; index < 3; index++) {
+    //   console.log('몇번쨰?', index)
+    //   console.log('안녕하세요');
+    // }
+    const 사탕바구니 = ['딸기맛사탕', '포도맛사탕', '박하맛사탕']
+    for (let index = 0; index < 사탕바구니.length; index++) {
+      const element = 사탕바구니[index];
+      console.log(element);
+    }
+
+    const 프로필목록 = [
+      {이름: '철수', 나이: 12},
+      {이름: '영희', 나이: 10},
+      {이름: '훈이', 나이: 11},
+    ]
+    for (let index = 0; index < 프로필목록.length; index++) {
+      const 꺼낸사람 = 프로필목록[index];
+      console.log(`이번에 꺼낸 사람은 ${꺼낸사람.이름}이고, 나이는 ${꺼낸사람.나이}살 입니다.`)
+      
+    }
+  </script>
+</head>
+<body>
+  
+</body>
+</html>

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>내장객체 실습</title>
+    <script>
+        // 1. Math 객체
+        const 수학객체 = {
+            max: function() {
+                console.log('최대값')
+            },
+            random: function() {
+                // console.log('랜덤')
+                return 5
+            },
+            round: function(반올림할값) {
+                console.log('반올림할값: ' + 반올림할값)
+            },
+        }
+        수학객체.max()
+        수학객체.round(1.5)
+        const 내가만든랜덤숫자 = 수학객체.random()
+        console.log(내가만든랜덤숫자)
+
+        const r = Math.random()
+        console.log(r)
+        
+        // 2. Date 객체
+        const 나의날짜 = new Date()
+        console.log(나의날짜.getFullYear())
+        console.log(나의날짜.getMonth()+1) // 0-11: January to December
+        console.log(나의날짜.getDate())
+        // console.log(나의날짜.getDay()) // 0-6: Sunday to Saturday
+
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

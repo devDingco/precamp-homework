@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>내장 객체 실습</title>
+    <script>
+        function 인증번호요청기능() {
+            const r = Math.random()
+            console.log(r)
+
+            const 여섯자리숫자 = Math.floor(Math.random() * 1000000) 
+            console.log(여섯자리숫자)
+            
+            const 여섯자리숫자문자 = String(여섯자리숫자).padStart(6, '0')
+            console.log(여섯자리숫자문자)
+        }
+    </script>
+</head>
+<body>
+    <button onclick="인증번호요청기능()">인증번호 요청</button>
+</body>
+</html>

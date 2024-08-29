@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>이메일 쪼개기 실습</title>
+    <script>
+        const myEmail = 'codecamp@gmail.com'
+        const result = myEmail.split('@')
+        console.log(result)
+
+        const name = result[0]
+        const domain = result[1]
+        console.log(name, domain)
+
+        const newName = name.slice(0, 4)
+        console.log('sliced:', name)
+        const newNameStar = '****'
+        console.log(newName)
+        
+        const name2 = newName + newNameStar
+        console.log(name2)
+
+        const newMyEmail = name2 + '@' + domain
+        console.log(newMyEmail)
+        
+    </script>
+</head>
+<body>
+    
+</body>
+</html>

@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <title>타이머 실습</title>
+    <script>
+        function timer() {
+            let 시간 = 5
+
+            (setInterval(function() {
+                if (시간 < 0) {
+                    return
+                }
+                let 분 = Math.floor(시간 / 60)
+                let 초 = 시간 % 60
+                console.log('남은 시간: ' + 분 + ':' + 초)
+                시간 -= 1
+            }, 1000))()
+        }
+    </script>
+</head>
+
+<body>
+    <button onclick="timer()">타이머 시작</button>
+</body>
+
+</html>
