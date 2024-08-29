@@ -1,0 +1,497 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+.background {
+  width: 1920px;
+  height: 1208px;
+  background-color: #491449;
+}
+
+/* 헤더 영역 */
+.header {
+  height: 80px;
+  margin-left: 80px;
+  display: flex;
+  flex-direction: row;
+}
+
+.left-header {
+  width: 376px;
+  height: 48px;
+  padding: 8px 0px 8px 0px;
+  margin-top: 16px;
+  margin-bottom: 16px;
+  margin-right: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: end;
+}
+
+.rigth-header {
+  width: 1360px;
+  height: 48px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin: 16px 80px 16px 0px;
+}
+
+.rigth-header input {
+  width: 920px;
+  height: 48px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 16px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #efe6ef;
+
+  background-image: url("./icon/search\ 24dp.png");
+  background-repeat: no-repeat;
+  background-size: 24px;
+  background-position: top 12px left 16px;
+
+  background-color: #955c98;
+}
+
+.rigth-header input::placeholder {
+  padding: 40px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 32px;
+  color: #efe6ef;
+}
+
+.student-menu {
+  display: flex;
+  flex-direction: row;
+  width: 163px;
+  height: 48px;
+  justify-content: space-between;
+}
+
+.student-menu button {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  background-color: transparent;
+}
+
+.student-btn {
+  width: 111px;
+  height: 48px;
+  border: 1px solid #713574;
+  border-radius: 8px;
+  padding: 8px 12px;
+}
+
+.student-btn p {
+  font-size: 16px;
+  font-weight: 400;
+  color: #ffffff;
+  margin-left: 8px;
+}
+
+.help-btn {
+  border: none;
+  margin-left: 20px;
+}
+
+/* 메인 영역 (메뉴바, 회원가입, 이미지) */
+.main {
+  width: 1840px;
+  height: 1048px;
+  margin: 0px 80px 80px 0px;
+  display: flex;
+}
+
+/* nav */
+.nav {
+  width: 80px;
+  height: 1048px;
+  margin-bottom: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.top-nav {
+  padding-top: 16px;
+}
+
+.top-element {
+  margin-top: 8px;
+}
+
+.top-menu {
+  margin-top: 16px;
+  text-align: center;
+}
+
+.top-menu p {
+  font-size: 14px;
+  font-weight: 600;
+  line-height: 20px;
+  color: #e4e4e4;
+}
+
+.down-nav {
+  width: 40px;
+  height: 96px;
+}
+
+.down-nav img:first-child {
+  margin-bottom: 16px;
+}
+
+/* menubar */
+.menubar {
+  width: 400px;
+  background-color: #713574;
+  border-radius: 8px 0px 0px 8px;
+  padding: 20px;
+}
+
+.menubar hr {
+  border: 1px solid #955c98;
+  margin-bottom: 24px;
+}
+
+.title {
+  height: 32px;
+  margin-bottom: 24px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+
+.title p {
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 32px;
+  text-align: left;
+  color: #ffffff;
+}
+
+.title-icon:first-child {
+  margin-right: 8px;
+}
+
+.detail-word {
+  width: 360px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  padding: 8px 12px;
+  background-color: transparent;
+  background-image: url("./icon/서약서 자세히 보기 버튼.png");
+  margin-bottom: 24px;
+}
+
+.menu-list {
+  width: 360px;
+  height: 40px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 16px;
+}
+
+.list-element {
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  font-size: 22px;
+  font-weight: 600;
+  line-height: 32px;
+  color: #ffffff;
+  padding: 4px 0px;
+}
+
+.list-element img {
+  margin-right: 8px;
+}
+
+.now-camp button {
+  width: 66px;
+  height: 32px;
+  border: none;
+  border-radius: 8px;
+  padding: 4px 12px;
+  background-color: #ffffff33;
+  font-size: 16px;
+  font-weight: 700;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.student-list-open {
+  height: 104px;
+  margin-top: 12px;
+  text-align: center;
+  color: #c9aac9;
+  font-size: 14px;
+  font-weight: 400;
+  line-height: 20px;
+  margin-bottom: 8px;
+}
+
+.student-text {
+  height: 56px;
+  padding: 8px;
+}
+
+.student-list-open button {
+  width: 126px;
+  height: 40px;
+  border: none;
+  background-color: transparent;
+  background-image: url("./icon/가입하기 버튼.png");
+  margin-top: 8px;
+}
+
+/* 수강생 */
+.student-btn-on {
+  width: 328px;
+  height: 40px;
+  margin: 18px 0px;
+  margin-bottom: 24px;
+  background: none;
+}
+
+.channel-open {
+  margin: 8px opx;
+  height: 152px;
+}
+
+.channel-tag {
+  height: 32px;
+  display: flex;
+  flex-direction: row;
+  padding: 4px 16px;
+  align-items: center;
+}
+
+.channel-tag p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #d4d3d3;
+  margin-left: 8px;
+  margin-bottom: 8px;
+}
+
+/* signup */
+.signup {
+  width: 1360px;
+  background-color: #d5bce4;
+  display: flex;
+}
+
+.signup-main {
+  width: 680px;
+}
+
+.signup-img {
+  width: 680px;
+  background-image: url("icon/일러스트 이미지 마스크.png");
+  background-size: cover;
+  box-shadow: 0px 0px 40px 0px #d389ff;
+}
+
+.signup-title {
+  color: #491449;
+  font-size: 40px;
+  font-weight: 800;
+  line-height: 56px;
+  text-align: center;
+}
+
+.signup-title:first-child {
+  margin-top: 40px;
+}
+
+/* 회원가입 요소 */
+.signup-list {
+  padding-top: 40px;
+  padding-left: 60px;
+  padding-right: 60px;
+  align-items: center;
+}
+
+.signup-list-element {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding-left: 56px;
+  padding-right: 56px;
+  padding-bottom: 20px;
+}
+
+.list-title {
+  width: 120px;
+  height: 44px;
+}
+
+.signup-list-element p {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 500;
+  line-height: 24px;
+  padding: 10px 0px;
+}
+
+.signup-list-element input,
+textarea {
+  width: 320px;
+  height: 44px;
+  border: 1px solid #c7c7c7;
+  border-radius: 8px;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.signup-list-element textarea {
+  height: 116px;
+  font-size: 16px;
+  font-weight: 400;
+  line-height: 24px;
+}
+
+.info-text {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 인증번호 요소 */
+.sign-agree-num {
+  display: flex;
+  justify-content: end;
+  padding-right: 56px;
+  align-items: center;
+}
+
+.sign-agree-num p {
+  margin-right: 12px;
+  font-size: 18px;
+  font-weight: 500;
+  color: #955c98;
+}
+
+.sign-agree-num button {
+  width: 136px;
+  height: 40px;
+  border: 1px solid #491449;
+  border-radius: 8px;
+  background-color: #ffffff;
+  padding: 8px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+}
+
+.agree-aline {
+  display: flex;
+  justify-content: end;
+  margin-right: 56px;
+  margin-top: 12px;
+  margin-bottom: 20px;
+  align-items: center;
+}
+
+.agree-aline p {
+  font-size: 18px;
+  font-weight: 500;
+  line-height: 24px;
+  color: #e84f4f;
+}
+
+.agree {
+  width: 136px;
+  height: 40px;
+  border: none;
+  border-radius: 8px;
+  color: #ffffff;
+  background-color: #c7c7c7;
+  padding: 8px 12px 8px 12px;
+  font-size: 16px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-left: 12px;
+}
+
+.agree:hover {
+  background-color: #491449;
+}
+
+/* 라디오버튼 */
+.signup-list-radio {
+  padding-left: 56px;
+  padding-right: 56px;
+  padding-bottom: 20px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.signup-list-radio p {
+  color: #333333;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+.radio-element {
+  font-size: 18px;
+  font-weight: 400;
+  line-height: 24px;
+  display: flex;
+  flex-direction: row;
+}
+
+.radio-list {
+  margin-right: 40px;
+}
+
+/* 동의 체크박스 */
+.signup-list-checkbox {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  margin-top: 20px;
+  margin-bottom: 30px;
+}
+
+.signup-list-checkbox input {
+  margin-right: 15px;
+  color: #333333;
+  font-size: 20px;
+  font-weight: 500;
+  padding: 10px 0px;
+}
+
+/* 가입 버튼 */
+.signup-btn {
+  width: 448px;
+  height: 48px;
+  background-color: #c7c7c7;
+  border: none;
+  border-radius: 8px;
+  padding: 12px 16px;
+  color: #f2f2f2;
+  font-size: 20px;
+  font-weight: 600;
+  line-height: 24px;
+  margin-left: 56px;
+  margin-right: 56px;
+}

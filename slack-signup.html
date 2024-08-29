@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>슬랙 회원가입</title>
+    <link rel="stylesheet" href="./slack-signup.css" />
+    <script src="slack-signup.js"></script>
+  </head>
+  <body>
+    <div class="background">
+      <div class="header">
+        <div class="left-header">
+          <img src="./icon/arrow_left 32dp.png" />
+          <img src="./icon/arrow_right 32dp.png" />
+          <img src="./icon/time 32dp.png" />
+        </div>
+        <div class="rigth-header">
+          <input type="text" placeholder="수강생을 검색해보세요." />
+          <div class="student-menu">
+            <button class="student-btn">
+              <img src="./icon/logo_codecamp 32dp.png" />
+              <p>수강생</p>
+            </button>
+            <button class="help-btn"><img src="./icon/help 32dp.png" /></button>
+          </div>
+        </div>
+      </div>
+
+      <div class="main">
+        <div class="nav">
+          <div class="top-nav">
+            <img src="./icon/채널 이미지.png" />
+            <div class="top-element">
+              <div class="top-menu">
+                <img src="./icon/home 40dp.png" />
+                <p>홈</p>
+              </div>
+              <div class="top-menu">
+                <img src="./icon/chat 40dp.png" />
+                <p>대화</p>
+              </div>
+              <div class="top-menu">
+                <img src="./icon/notifications 40dp.png" />
+                <p>알림</p>
+              </div>
+              <div class="top-menu">
+                <img src="./icon/bookmark 40dp.png" />
+                <p>북마크</p>
+              </div>
+              <div class="top-menu">
+                <img src="./icon/more_meatball 40dp.png" />
+                <p>더보기</p>
+              </div>
+            </div>
+          </div>
+          <div class="down-nav">
+            <img src="./icon/add_profile 40dp.png"/>
+            <img src="./icon/내 프로필_A.png"/>
+          </div>
+        </div>
+        <div class="menubar">
+          <div class="title">
+            <p>코드캠프</p>
+            <div class="title-icon">
+              <img src="./icon/filter 24dp.png"/>
+              <img src="./icon/edit 24dp.png"/>
+            </div>
+          </div>
+          <button class="detail-word"></button>
+          <hr />
+          <div class="now-camp menu-list">
+            <div class="list-element">
+              <img src="./icon/logo_codecamp 24dp.png"/>
+              <p>코드캠프 13기</p>
+            </div>
+            <button>수강중</button>
+          </div>
+          <div class="student-list-tap">
+            <div class="student-list-title menu-list">
+              <div class="list-element">
+                <img src="./icon/group 24pd.png"/>
+                <p>수강생 리스트</p>
+              </div>
+              <img src="./icon/arrow_down 24dp.png" />
+            </div>
+            <div id="student-list-open" class="student-list-open">
+              <div id="student-list">
+                <div class="student-text">
+                  <p>현재 가입한 멤버가 없어요.</p>
+                  <p>회원가입 해보세요.</p>
+                </div>
+                <button></button>
+              </div>
+            </div>
+          </div>
+          <div class="channel">
+            <div class="menu-list">
+              <div class="list-element">
+                <img src="./icon/channel_list 24dp.png"/>
+                <p>채널</p>
+              </div>
+              <img src="./icon/arrow_down 24dp.png"/>
+            </div>
+          </div>
+          <div class="channel-open">
+            <div class="channel-tag">
+              <img src="./icon/tag 20dp.png" />
+              <p>채널1</p>
+            </div>
+            <div class="channel-tag">
+              <img src="./icon/tag 20dp.png" />
+              <p>채널2</p>
+            </div>
+            <div class="channel-tag">
+              <img src="./icon/tag 20dp.png" />
+              <p>채널3</p>
+            </div>
+            <div class="channel-tag">
+              <img src="./icon/tag 20dp.png" />
+              <p>채널4</p>
+            </div>
+          </div>
+          <div class="menu-list">
+            <div class="list-element">            
+              <img src="./icon/skull 24dp.png">
+              <p>차단 멤버 리스트</p>
+            </div>
+          </div>
+        </div>
+        <div class="signup">
+          <div class="signup-main">
+            <p class="signup-title">코드캠프에 가입하고</p>
+            <p class="signup-title">개발자로 커리어 점프 하세요.</p>
+            <div class="signup-list">
+              <div class="signup-list-element">
+                <p class="list-title">이름</p>
+                <input id="info-name" type="text" placeholder="이름을 입력해주세요." oninput="isNotEmpty()" />
+              </div>
+              <div class="signup-list-element">
+                <p class="list-title">이메일</p>
+                <div class="info-text">
+                  <input
+                    id="info-email"
+                    type="email"
+                    placeholder="네이버, 구글, 한메일, 카카오 계정만 입력"
+                    oninput="isNotEmpty(); checkEmail()"
+                  />
+                  <p id="warning-text-email" class="warning-text"></p>
+                </div>
+              </div>
+              <div class="signup-list-element">
+                <p class="list-title">비밀번호</p>
+                <input
+                  id="info-password"
+                  type="password"
+                  placeholder="비밀번호를 입력해주세요."
+                  oninput="isNotEmpty(); checkPasswords()"
+                />
+              </div>
+              <div class="signup-list-element">
+                <p class="list-title">비밀번호 확인</p>
+                <div class="info-text">
+                  <input
+                    id="info-password-check"
+                    type="password"
+                    placeholder="비밀번호를 다시 입력해주세요."
+                    oninput="isNotEmpty(); checkPasswords()"
+                  />
+                  <p id="warning-text-password" class="warning-text"></p>
+                </div>
+              </div>
+              <div id="signup-list-element" class="signup-list-element">
+                <p class="list-title">전화번호</p>
+                <div class="info-text">
+                  <input
+                    id="info-phone"
+                    type="tel"
+                    placeholder="010으로 시작, '-'를 꼭 입력해주세요."
+                    oninput="isNotEmpty(); checkPhoneNumber()"
+                  />
+                  <p id="warning-text-phone" class="ing-text"></p>
+                </div>
+              </div>
+              <div class="sign-agree-num">
+                <p id="auth-num">000000</p>
+                <button onclick="authButton()">인증번호 요청</button>
+              </div>
+              <div class="agree-aline">
+                <p id="auth-time"></p>
+                <button id="agree-btn" class="agree" onclick="authCheckButton()">인증하기</button>
+              </div>
+              <div class="signup-list-element">
+                <p class="list-title">자기소개</p>
+                <textarea id="info-intro" placeholder="자기소개를 입력해주세요." oninput="isNotEmpty()"></textarea>
+              </div>
+              <div class="signup-list-radio">
+                <p class="list-title">성별</p>
+                <div class="radio-element">
+                  <div class="radio-list">
+                    <input type="radio" name="gender" id="woman" value="여성" oninput="isNotEmpty()" />
+                    <label for="woman">여성</label>
+                  </div class="radio-list">
+                  <div class="radio-list">
+                    <input type="radio" name="gender" id="man" value="남성" oninput="isNotEmpty()" />
+                    <label for="man">남성</label>
+                  </div>
+                </div>
+              </div>
+              <div class="signup-list-checkbox">
+                <input type="checkbox" id="agree" oninput="isNotEmpty()" />
+                <label for="agree"> 집에는 씻으러만 가는데 동의합니다. </label>
+              </div>
+              <button id="signup-btn" class="signup-btn" onclick="newProfileCreate()" disabled>가입</button>
+            </div>
+          </div>
+          <div class="signup-img"></div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
