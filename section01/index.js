@@ -190,8 +190,9 @@ function 인증완료버튼() {
 
 // 입력 필드 변경 시 유효성 검사 및 버튼 활성화 함수
 function 인풋필드추가() {
+  // 각 입력 필드의 값을 가져와 유효성 검사
   const 이름 = document.getElementById("이름").value.trim() !== "";
-  const 이메일 = document.getElementById("이메일").value.trim() !== "";
+  const 이메일 = document.getElementById("이메일").value.trim();
   const 비밀번호 = document.getElementById("비밀번호").value;
   const 비밀번호확인 = document.getElementById("비밀번호확인").value;
   const 전화번호 = document.getElementById("전화번호").value.trim();
@@ -206,9 +207,13 @@ function 인풋필드추가() {
   const 비밀번호유효 = /^(?=.*[a-z])(?=.*[!@#$%^&*])(?=.{8,})/.test(비밀번호);
   const 전화번호유효 = /^010-\d{3,4}-\d{4}$/.test(전화번호);
 
+  // 이메일 유효성 검사
+  const 이메일유효 = 이메일유효성검사(이메일);
+
+  // 모든 필드가 유효한 경우 가입 버튼 활성화
   if (
     이름 &&
-    이메일 &&
+    이메일유효 &&
     비밀번호유효 &&
     비밀번호 === 비밀번호확인 &&
     전화번호유효 &&
@@ -229,6 +234,20 @@ function 인풋필드추가() {
         <img src="./assets/가입버튼.png" id="활성화된가입버튼"/>
       </button>
     `;
+  }
+
+  // 이메일 유효성 메시지 표시
+  const 이메일메시지 = document.getElementById("이메일메시지");
+  if (이메일메시지) {
+    if (이메일 === "") {
+      이메일메시지.textContent = "";
+    } else if (!이메일유효) {
+      이메일메시지.textContent = "유효하지 않은 이메일 주소입니다.";
+      이메일메시지.style.color = "red";
+    } else {
+      이메일메시지.textContent = "유효한 이메일 주소입니다.";
+      이메일메시지.style.color = "green";
+    }
   }
 
   // 비밀번호 유효성 메시지 표시
@@ -262,6 +281,28 @@ function 인풋필드추가() {
   }
 }
 
+// 이메일 유효성 검사 함수
+function 이메일유효성검사(이메일) {
+  // @ 문자 확인
+  if (!이메일.includes("@")) {
+    return false;
+  }
+
+  // 이메일 주소를 @ 기준으로 분할
+  const [아이디, 도메인] = 이메일.split("@");
+
+  // 아이디와 도메인이 비어있지 않은지 확인
+  if (아이디.length === 0 || 도메인.length === 0) {
+    return false;
+  }
+
+  // 허용된 도메인 목록을 정의
+  const 허용된도메인 = ["naver.com", "gmail.com", "hanmail.net", "kakao.com"];
+
+  // 도메인이 허용된 목록에 있는지 확인
+  return 허용된도메인.includes(도메인);
+}
+
 // 비밀번호 일치 여부 확인 함수
 function 유효성검사() {
   const 비밀번호 = document.getElementById("비밀번호").value;
@@ -285,6 +326,9 @@ function 유효성검사() {
 
 // 페이지 로드 시 이벤트 리스너 설정
 window.onload = function () {
+  //이메일 입력 필드에 이벤트 리스너 추가
+  //document.getElementById("이메일").addEventListener("input", 인풋필드추가);
+
   // 비밀번호 입력 필드에 이벤트 리스너 추가
   document.getElementById("비밀번호").addEventListener("input", 인풋필드추가);
 
