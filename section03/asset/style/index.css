@@ -1,0 +1,539 @@
+@import 'reset.css';
+@font-face {
+  font-family: 'Pretendard-Regular';
+  src: url('https://fastly.jsdelivr.net/gh/Project-Noonnu/noonfonts_2107@1.1/Pretendard-Regular.woff') format('woff');
+  font-weight: 400;
+  font-style: normal;
+}
+
+/* Variables */
+
+:root {
+  --p-main: #491449;
+  --p-100: #713574;
+  --p-200: #955c98;
+  --p-300: #c9aac9;
+  --p-400: #d5bce4;
+  --p-500: #efe6ef;
+  --gray-w: #ffffff;
+  --gray-50: #f2f2f2;
+  --gray-100: #e4e4e4;
+  --gray-200: #d4d3d3;
+  --gray-300: #c7c7c7;
+  --gray-400: #ababab;
+  --gray-500: #919191;
+  --gray-600: #777777;
+  --gray-700: #5f5f5f;
+  --gray-800: #333333;
+  --gray-900: #1c1c1c;
+  --gray-b: #000000;
+  --readius-sm: 8px;
+  --gap-sm: 4px;
+  --gap-md: 8px;
+  --gap-lg: 16px;
+  --gap-xl: 24px;
+}
+
+/* Typography */
+
+:root {
+  font-family: 'Pretendard';
+}
+
+/* Layouts */
+
+.flex-box {
+  display: flex;
+}
+
+.flex-box.col {
+  flex-direction: column;
+}
+
+.flex-box.justify-between {
+  justify-content: space-between;
+}
+
+.flex-box.justify-center {
+  justify-content: center;
+}
+
+.flex-box.align-center {
+  align-items: center;
+}
+
+/* Components */
+
+.wrapper {
+  width: 1920px;
+  height: 1208px;
+  padding-right: 80px;
+  padding-bottom: 80px;
+  position: relative;
+  color: var(--gray-w);
+  background-color: var(--p-main);
+}
+
+.container {
+  height: 1048px;
+  display: flex;
+  border-radius: var(--readius-sm);
+  overflow: hidden;
+}
+
+.sidebar {
+  width: 80px;
+  flex-shrink: 0;
+}
+
+.header {
+  width: 100%;
+  height: 80px;
+  display: flex;
+}
+
+.header-control {
+  min-width: 480px;
+  flex-shrink: 0;
+  display: flex;
+  justify-content: flex-end;
+  gap: var(--gap-lg);
+  padding: var(--gap-xl);
+}
+
+.header-search {
+  flex-grow: 1;
+  display: flex;
+  align-items: center;
+  position: relative;
+}
+
+.header-search:before {
+  content: '';
+  background-image: url('../images/icon_search.svg');
+  background-repeat: no-repeat;
+  width: 16px;
+  height: 16px;
+  position: absolute;
+  top: 50%;
+  left: 20px;
+  transform: translateY(-50%);
+}
+
+.header-search input {
+  width: 920px;
+  height: 48px;
+  border: none;
+  border-radius: var(--readius-sm);
+  background-color: var(--p-200);
+  padding: 0 48px;
+  font-size: 20px;
+}
+
+.header-search input::placeholder {
+  color: var(--gray-w);
+}
+
+.header-aside {
+  min-width: 163px;
+  gap: 20px;
+  align-items: center;
+}
+
+.badge-student {
+  width: 111px;
+  height: 48px;
+  border: 1px solid var(--p-100);
+  border-radius: var(--readius-sm);
+}
+
+.badge-student:before {
+  background-image: url('../images/logo_codecamp_yellow.svg');
+}
+
+.button-icon,
+.title-icon {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.button-icon:before,
+.title-icon:before {
+  content: '';
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: center;
+}
+
+.button-icon:before {
+  width: 32px;
+  height: 32px;
+}
+
+.title-icon:before {
+  width: 24px;
+  height: 24px;
+}
+
+.sidebar {
+  padding: 16px 20px 0px;
+  font-size: 14px;
+  flex-shrink: 0;
+}
+
+.channel-profile {
+  margin-bottom: var(--gap-lg);
+}
+
+.menu-list li {
+  gap: var(--gap-sm);
+}
+
+.menu-list li + li {
+  margin-top: var(--gap-lg);
+}
+
+.menu-list li a {
+  text-align: center;
+  color: var(--gray-100);
+  font-weight: 600;
+}
+
+.icon-box {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  height: 40px;
+  margin-bottom: var(--gap-md);
+  transition: all 0.4s ease;
+}
+
+.menu-list li.active .icon-box,
+.menu-list li:hover .icon-box {
+  border-radius: var(--readius-sm);
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.button-more .icon-box img {
+  max-width: 24px;
+}
+
+.menu-list li .icon-box img {
+  transition: all 0.4s ease;
+}
+
+.menu-list li:hover .icon-box img {
+  transform: scale(110%);
+}
+
+.button-add,
+.button-my-profile {
+  width: 40px;
+  height: 40px;
+}
+
+.button-add {
+  margin-bottom: var(--gap-md);
+  border-radius: 50%;
+  background-color: rgba(255, 255, 255, 0.2);
+  text-align: center;
+}
+
+.button-my-profile {
+  border-radius: var(--readius-sm);
+  background-color: #b14bb6;
+}
+
+.content {
+  width: 1760px;
+  display: flex;
+  background-color: var(--p-400);
+  border-radius: var(--readius-sm);
+}
+
+.content-info {
+  min-width: 400px;
+  background-color: var(--p-100);
+  border-radius: var(--readius-sm);
+  padding: 20px;
+}
+
+.info-header {
+  padding-bottom: var(--gap-xl);
+  margin-bottom: var(--gap-xl);
+  border-bottom: 1px solid var(--p-200);
+}
+
+.info-header h3 {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.option-list {
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.option-list button {
+  width: 24px;
+  height: 24px;
+}
+
+.button-contract {
+  margin-top: 24px;
+  width: 100%;
+  height: 40px;
+  text-align: center;
+  color: var(--p-main);
+  background-color: #fff;
+  border-radius: var(--readius-sm);
+  justify-content: center;
+}
+
+.button-contract:before {
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/icon_contract_edit.svg');
+}
+
+.info-menu {
+  margin-top: var(--gap-lg);
+}
+
+.info-menu h3 {
+  margin-bottom: 12px;
+  font-size: 22px;
+  font-weight: 600;
+}
+
+.badge-status {
+  width: 66px;
+  height: 32px;
+  border-radius: var(--readius-sm);
+  background-color: rgba(255, 255, 255, 0.2);
+}
+
+.camp-name:before {
+  background-image: url('../images/logo_codecamp_white.svg');
+}
+.student-list:before {
+  background-image: url('../images/icon_person_group.svg');
+}
+.channel:before {
+  background-image: url('../images/icon-channel.svg');
+}
+.block-member:before {
+  background-image: url('../images/icon_skull.svg');
+}
+
+.no-member {
+  padding-top: var(--gap-md);
+  text-align: center;
+}
+
+.no-member-message {
+  font-size: 14px;
+  color: var(--p-300);
+  line-height: 20px;
+}
+
+.button-go-signup {
+  width: 126px;
+  height: 40px;
+  margin: 16px auto 0;
+  background-color: var(--p-main);
+  border-radius: var(--readius-sm);
+  justify-content: center;
+}
+
+.button-go-signup:before {
+  width: 24px;
+  height: 24px;
+  background-image: url('../images/icon_person_add.svg');
+}
+
+.chennal-list {
+  padding: 0 var(--gap-lg);
+}
+
+.chennal-list li + li {
+  margin-top: 12px;
+}
+
+.chennal-list li {
+  display: flex;
+  align-items: center;
+  gap: var(--gap-md);
+}
+
+.chennal-list li:before {
+  content: '';
+  width: 20px;
+  height: 20px;
+  background-image: url('../images/icon_hashtag.svg');
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.chennal-list a {
+  color: var(--gray-200);
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.content-form {
+  max-width: 680px;
+  flex-grow: 1;
+  padding: 40px 60px;
+  text-align: center;
+}
+
+.content-form h2 {
+  color: var(--p-main);
+  font-size: 40px;
+  font-weight: 700;
+  text-align: center;
+  margin-bottom: 40px;
+}
+
+.input-area {
+  gap: 20px;
+  padding: 0 56px;
+}
+
+.content-form label {
+  flex-shrink: 0;
+  min-width: 120px;
+  color: var(--gray-800);
+  font-size: 20px;
+  font-weight: 500;
+  text-align: left;
+}
+
+.content-form input[type='text'],
+.content-form input[type='password'],
+.content-form textarea {
+  width: 320px;
+  height: 44px;
+  border-radius: var(--readius-sm);
+  border: 1px solid var(--gray-300);
+  padding: 10px 12px;
+  font-size: 18px;
+}
+
+.content-form textarea {
+  height: 116px;
+  padding: 8px 12px;
+}
+
+.gender-check > .flex-box {
+  padding: 10px;
+  align-items: center;
+  min-width: 168px;
+}
+
+#female,
+#male {
+  margin-right: var(--readius-sm);
+  width: 20px;
+  height: 20px;
+  appearance: none;
+  border-radius: 50%;
+  border: 2px solid var(--gray-500);
+}
+
+#female:checked,
+#male:checked {
+  border: none;
+  box-shadow: inset 0 0 0 2px var(--p-main), inset 0 0 0 5px var(--p-400), inset 0 0 0 10px var(--p-main);
+}
+
+#female {
+  margin-left: 40px;
+}
+
+.agree-area {
+  justify-content: center;
+}
+
+#check-agree {
+  display: none;
+}
+
+#check-agree + .label-check-agree > span {
+  vertical-align: middle;
+  padding: 8px;
+}
+
+#check-agree + .label-check-agree:before {
+  content: '';
+  display: inline-block;
+  width: 18px;
+  height: 18px;
+  border: 3px solid var(--gray-500);
+  border-radius: 3px;
+  vertical-align: middle;
+}
+
+#check-agree:checked + .label-check-agree:before {
+  border-color: var(--p-main);
+  background-image: url('../images/icon_check.svg');
+  background-size: 15px auto;
+  background-repeat: no-repeat;
+  background-position: center;
+}
+
+.button-signup {
+  width: 100%;
+  height: 48px;
+  color: var(--gray-w);
+  background-color: var(--p-main);
+  border-radius: var(--readius-sm);
+}
+
+.button-signup:disabled {
+  background-color: var(--gray-300);
+}
+
+.auth-area {
+  gap: 12px;
+  justify-content: flex-end;
+  align-items: center;
+}
+
+.auth-number {
+  color: var(--p-200);
+  font-size: 18px;
+}
+
+.button-auth-box {
+  text-align: right;
+  margin-top: 12px;
+}
+
+.button-auth,
+.button-auth-number {
+  width: 136px;
+  height: 40px;
+  border-radius: var(--readius-sm);
+  font-size: 20px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.button-auth-number {
+  color: var(--p-main);
+  background-color: var(--gray-w);
+  border: 1px solid var(--p-main);
+}
+
+.button-auth {
+  background-color: var(--p-main);
+}
+
+.content-cover {
+  max-width: 680px;
+  box-shadow: 0 0 40px 0 var(--p-400);
+}
