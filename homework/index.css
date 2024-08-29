@@ -244,6 +244,18 @@ button {
   font-weight: 500;
 }
 
+.CSS_입력값오류 {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.CSS_입력값오류_아이템 {
+  color: var(--error, #E84F4F);
+  font-size: 14px;
+  width: 320px;
+  margin-top: 4px;
+}
+
 .CSS_사이드바_회원가입_인풋 {
   display: flex;
   width: 320px;
@@ -251,6 +263,7 @@ button {
   align-items: center;
   border-radius: 8px;
   border: 1px solid var(--gray-300, #c7c7c7);
+  /* border: 1px solid #E84F4F; */
   background: var(--gray-W, #fff);
   padding: 8px 12px;
   box-sizing: border-box;

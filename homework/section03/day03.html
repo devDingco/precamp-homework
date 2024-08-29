@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <title>Day03 퀴즈</title>
+  <script>
+    
+    function validation() {
+      const value = document.getElementById('이메일입력창').value;
+
+      // @가 없으면 
+      if (!value.includes('@')) {
+        alert('제대로 된 이메일이 아닙니다. 이메일에 @가 없습니다.')
+        return false
+      }
+      
+      // naver.com, gmail.com, hanmai.net 확인
+      const [userName, domain] = value.split('@')
+      if (domain === 'naver.com' || domain === 'gmail.com' || domain === 'hanmail.com') {
+        return true
+      } else {
+        alert('이메일은 naver.com, gmail.com, hanmail.net 3개만 입력 가능합니다.')
+        return false
+      }
+    }
+
+    function onClickButton() {
+      if (validation()) {
+        alert('회원가입을 축하합니다.')
+      }
+    }
+
+  </script>
+</head>
+<body>
+  이메일: <input id="이메일입력창" type="text">
+  <button id="회원가입하기" onclick="onClickButton()">회원가입</button>
+</body>
+</html>

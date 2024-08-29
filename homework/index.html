@@ -192,6 +192,9 @@
                     placeholder="네이버, 구글, 한메일, 카카오 계정만 입력"
                   />
                 </div>
+                <!-- <div class="CSS_입력값오류">
+                  <div class="CSS_입력값오류_아이템">이메일은 naver.com, gmail.com, hanmail.net, kakao.com 만 사용 가능합니다.</div>
+                </div> -->
                 <div class="CSS_사이드바_회원가입_높이간격"></div>
                 <div class="CSS_회원가입_항목">
                   <div class="CSS_회원가입_항목_제목">비밀번호</div>
@@ -208,20 +211,30 @@
                   <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
                   <input
                     class="CSS_사이드바_회원가입_인풋"
+                    oninput="passwordValidation()"
                     type="password"
                     placeholder="비밀번호를 한번 더 입력해 주세요."
                   />
                 </div>
+                <div id="비밀번호값오류안내"></div>
+                <!-- <div class="CSS_입력값오류">
+                  <div class="CSS_입력값오류_아이템">이메일은 naver.com, gmail.com, hanmail.net, kakao.com 만 사용 가능합니다.</div>
+                </div> -->
                 <div class="CSS_사이드바_회원가입_높이간격"></div>
                 <div class="CSS_회원가입_항목">
                   <div class="CSS_회원가입_항목_제목">전화번호</div>
                   <div class="CSS_사이드바_왼쪽부분_항목_간격"></div>
                   <input
                     class="CSS_사이드바_회원가입_인풋"
+                    oninput="phoneValidation()"
                     type="tel"
                     placeholder="010으로 시작, '-'을 꼭 입력해 주세요."
                   />
                 </div>
+                <div id="전화번호값오류안내"></div>
+                <!-- <div class="CSS_입력값오류">
+                  <div class="CSS_입력값오류_아이템">이메일은 naver.com, gmail.com, hanmail.net, kakao.com 만 사용 가능합니다.</div>
+                </div> -->
                 <div class="CSS_사이드바_회원가입_높이간격"></div>
 
                 <div class="CSS_사이드바_회원가입_인증">
