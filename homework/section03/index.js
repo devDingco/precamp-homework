@@ -167,7 +167,7 @@ function 수강생상세정보 (수강생번호) {
         (가입일시: ${수강생정보.가입일시})
         `)
 }
-
+let 시간 = 179;
 
 function 인증번호요청() {
     if (인터벌삭제) {
@@ -178,13 +178,18 @@ function 인증번호요청() {
 
     document.getElementById("인증번호").innerText = 인증번호
 
-    let 시간 = 179;
+    시간 = 179;
     인터벌삭제 = setInterval(function() {
-        const 분 = String(Math.floor(시간 / 60)).padStart(2, "0")
-        const 초 = String(시간 % 60).padStart(2, "0")
-    
-        document.getElementById("인증번호남은시간").innerText = `${분}:${초}`
-        시간 = 시간 - 1;
+        if(시간 != 0){
+            const 분 = String(Math.floor(시간 / 60)).padStart(2, "0")
+            const 초 = String(시간 % 60).padStart(2, "0")
+        
+            document.getElementById("인증번호남은시간").innerText = `${분}:${초}`
+            시간 = 시간 - 1;
+        }
+        else {
+            clearInterval(인터벌삭제)
+        }
 
     }, 1000)
 
@@ -193,12 +198,15 @@ function 인증번호요청() {
         document.getElementById("인증하기버튼").style = `background-color: #C7C7C7`
     }, 180000)
     // 인증하기버튼기능()
+    // 인증하기버튼기능()
 
 }
 
 function 인증하기버튼기능() {
+    시간 = 0
     document.getElementById("인증하기버튼").src ="./assets/인증완료_비활성화.png"
     document.getElementById("인증하기버튼").disabled = "true";
     document.getElementById("인증번호남은시간").innerText = "";
+    
 }
 
