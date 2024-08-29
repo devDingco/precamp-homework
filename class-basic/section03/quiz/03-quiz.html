@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <title>퀴즈</title>
+    <script>
+        const 이메일종류 = ["naver.com", "gmail.com", "hanmail.net"]
+        function 회원가입완료() {
+            const 이메일 = document.getElementById("이메일").value
+            
+            const 골뱅이 = 이메일.includes('@')
+
+            let 이메일포함 = false
+
+            const 이메일자르기 = 이메일.split('@')
+            const 이메일뒷부분 = 이메일자르기[1]
+
+            for(let 반복횟수 =  0 ; 반복횟수 < 3 ; 반복횟수 = 반복횟수 + 1) {
+                if (이메일뒷부분 === 이메일종류[반복횟수]) {
+                    이메일포함 = true;
+                }
+            }
+            
+            if(!골뱅이){
+                alert("제대로된 이메일이 아닙니다. 이메일에 @가 없습니다.")
+            }  else if (!이메일포함) {
+                alert("이메일은 naver.com, gmail.com, hanmail.com 중에서만 가입 가능합니다.")
+            } else {
+                alert("회원가입을 축하합니다.")
+            }
+
+        }
+    </script>
+</head>
+<body>
+    이메일: <input id="이메일" type="text"/>
+    <button onclick="회원가입완료()">회원가입</button>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="ko">
+  <head>
+    <title>email 쪼개기 실습</title>
+    <script>
+      const 이메일 = "sin322@gmail.com";
+      // split: 기준으로 앞뒤 쪼개기
+      const 쪼갠이메일 = 이메일.split("@");
+      console.log(쪼갠이메일);
+
+      const 이메일앞부분 = 쪼갠이메일[0];
+      console.log(이메일앞부분);
+      const 이메일뒷부분 = 쪼갠이메일[1];
+      console.log(이메일뒷부분);
+
+      //slice: 자르기
+      const newEmailF = 이메일앞부분.slice(0, 3);
+      consol.log(newEmailF)
+      const newEmailStar = "****";
+      const newEmail = newEmailF + newEmailStar;
+      console.log(newEmail);
+
+      const 새로운이메일 = newEmail + "@" + 이메일뒷부분;
+      console.log(새로운이메일);
+    </script>
+  </head>
+  <body></body>
+</html>
